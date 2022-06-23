@@ -8,7 +8,6 @@ from dotenv import load_dotenv
 load_dotenv()
 class login:
     run=0
-    value=""
     def t_login(self):
         id=os.getenv("id")
         if self.run==0:
@@ -19,7 +18,7 @@ class login:
         else:
             print("Contact technical support to reset your password.")
             sys.exit(0)
-        resp=requests.get('http://127.0.0.1:8000/{}/{}/{}'.format(self.value,id,pswd))
+        resp=requests.get('http://127.0.0.1:8000/{}/{}&{}'.format(self.value,id,pswd))
         check=json.loads(resp.text)
         if check['value']==True:
             print("login successful")
@@ -32,12 +31,7 @@ class login:
             print("contact the technical support and report an issue")
 
     def __init__(self, val:int):
-        if val==1:
-            self.value ="students"
-        elif val==2:
-            self.value ="parents"
-        elif val==3:
-            self.value ="teachers"
-        else:
-            raise ValueError
+        self.value=val
         self.t_login()
+
+login(x) # replace x with 1-teacher, 2-students, 3-parents.
