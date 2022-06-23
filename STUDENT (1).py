@@ -1,4 +1,7 @@
-from tabulate import tabulate 
+from tabulate import tabulate
+from tkinter import *       
+from tkinter.ttk import *
+ 
 username=input("Enter your username:")              #
 name = username.split()
 print('Hello',name[0])                                          #
@@ -40,6 +43,20 @@ while True:
                     print('ASSIGNMENT ADDED')
                     for l in Ass:
                         print(l)
+                    
+# Create Object
+                    root = Tk()
+ 
+# Initialize tkinter window with dimensions 100x100            
+                    root.geometry('100x100')    
+ 
+                    btn = Button(root, text = 'Submit Changes !',
+                                    command = root.destroy)
+ 
+# Set the position of button on the top of window
+                    btn.pack(side = 'top')    
+ 
+                    root.mainloop()
                     input("Press enter to go back")
                 else:               
                     input("Press enter to go back")
