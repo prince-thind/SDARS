@@ -8,9 +8,12 @@ async def root():
 
 #1 -> student, 2 -> student, 3 -> parents
 
-@app.get("/2/{admno}/assignments/")
-async def student_assignment(admno:str):
-    number=assignments.get_lastassignment_no(get_class(admno))
+@app.get("/2/{admno}&{var]/assignments/")
+async def student_assignment(admno:str,var:str):
+    x=login(persona=2,login_data=tuple(admno,var))["login"]
+    if x==True:
+        number=assignments.get_lastassignment_no(get_class(admno))
+    else: pass
 
 @app.post("/1/{id}&{var}/upload-assignment/{class_name}/")
 async def upload_assignment(id:str,var:str,class_name:str,file: bytes = File(default=None)):
