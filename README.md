@@ -1,2 +1,2 @@
-# SDARS
-baadmein likhunga description
+# school management
+This repository is the place for our draft codes for the class 12 project.
