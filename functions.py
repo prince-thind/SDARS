@@ -8,6 +8,7 @@ async def root():
     pass
 
 #1 -> teacher, 2 -> student, 3 -> parents
+# yesssss!!! uncommented code. breakyour mind understanding this mess
 
 @app.get("/2/{admno}&{var]/assignments/")
 async def student_assignment(admno:str,var:str):
@@ -38,7 +39,6 @@ async def upload_assignment(id:str,var:str,class_name:str,file: bytes = File(def
     if x==True:
         number = int(assignments.get_lastassignment_no(self=assignments,class_name=class_name))
         path = assignments.make_assignment(self=assignments,class_name=class_name, assgno=number)["path"]
-          # idk what is the optput here thats why there is "pass" in conditions
         if path == "Error":
             return {"process": "uploading failed"}
         else:
