@@ -1,4 +1,5 @@
 import mysql.connector as conn
+import glob, os
 db = conn.connect(host="127.0.0.1", user="root", password="291005", database="school")
 cursor = db.cursor(buffered=True)
 
@@ -15,7 +16,7 @@ class assignments:
 
     def make_assignment(self,class_name: str, assgno:int):
         try:
-            path = 'C:\\Users\\Sumit\\PycharmProjects\\csproject\\assignments_{}\\assignment{}'.format(class_name,
+            path = 'C:\\Users\\Sumit\\PycharmProjects\\csproject\\assignments_{}\\assignment{}.txt'.format(class_name,
                                                                                                        assgno)
             self.cursor.execute("insert into {} values({},'{}')".format(class_name, assgno, path))
             self.db.commit()
@@ -108,7 +109,36 @@ def get_assignments(start: int, end: int, class_name: str):
                 subject = data[0].split('=')[1]
                 d[subject] = topic
         return d
-def get_filepath(number,admno):
+
+def get_filepath(admno:str,assignment_no:int):
         class_name=get_class(admno)
-        path="assignments_{}/assignment{}.txt".format(class_name, number)
+        path="C:\\Users\\Sumit\\PycharmProjects\\csproject\\assignments_{}\\assignment{}.txt".format(class_name,assignment_no)
         return path
+
+def last_circular_number(class_name:str):
+    os.chdir("C:\\Users\\Sumit\\PycharmProjects\\csproject\\circular_{}\\".format(class_name))
+    name=(glob.glob("*.txt")[-1])
+    path="C:\\Users\\Sumit\\PycharmProjects\\csproject\\circular_{}\\{}".format(class_name,name)
+    return path
+
+def get_circulars(start:int,end:int,class_name:str):
+    d = dict()
+    for x in range(start, end + 1):
+        path = "circular_{}/circular_no{}.txt".format(class_name, x)
+        with open(path, 'r') as file:
+            data = file.read().split("\n")
+            topic = data[1].split('=')[1]
+            subject = data[0].split('=')[1]
+            d[subject] = topic
+    return d
+
+def check_response(path:str,admno:str):
+    file=open(path,"r")
+    if admno in file.read():
+        return True
+    else: return False
+
+def test_names(class_name:str):
+    os.chdir("C:\\Users\\Sumit\\PycharmProjects\\csproject\\testresult_{}\\".format(class_name))
+    data= glob.glob("*.txt")
+    return data,len(data)
