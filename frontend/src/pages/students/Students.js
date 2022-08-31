@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { fetchCirculars } from "../../lib/API";
 import Circular from "../../lib/commonComponents/Circular";
+import UnauthorizedAccess from "../../lib/commonComponents/UnauthorisedAccess";
 
 export default function Students({ username, privilege }) {
 
@@ -14,14 +15,14 @@ export default function Students({ username, privilege }) {
 
 
 
-    if (!username || !privilege) return <div>unauthorized access</div>
+    if (!username || !privilege) return <UnauthorizedAccess />
 
 
     return <div>
         <h2>Studnets's page </h2>
         <section>
             <h2>Circulars</h2>
-            {circulars.length===0?"loading":""}
+            {circulars.length === 0 ? "loading" : ""}
             <ul>
                 {circulars.map(e => {
                     return <li><Circular circular={e} /></li>
