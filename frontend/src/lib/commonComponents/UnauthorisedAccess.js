@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 
 export default function UnauthorizedAccess({ circular }) {
-    const [time, setTime] = useState(10000);
+    const [time, setTime] = useState(5000);
     const navigate = useNavigate();
 
 
@@ -21,6 +21,6 @@ export default function UnauthorizedAccess({ circular }) {
     }, [time, navigate])
 
     return <div>
-        unauthorized access! returing back to login in {time / 1000} seconds;
+        unauthorized access! returing back to login in {time / 1000} seconds
     </div>
 }

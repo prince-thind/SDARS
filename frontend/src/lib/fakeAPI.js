@@ -33,10 +33,12 @@ export async function fetchFakeCirculars() {
             name: "Updated Library Timings",
             description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum mauris risus, non tincidunt enim semper sit amet. Donec fermentum et leo et mattis. Nunc feugiat dolor finibus massa facilisis bibendum. Donec pellentesque vulputate elit et auctor. Vivamus maximus tellus et magna molestie tristique. Donec sed augue sodales, elementum elit sit amet, feugiat lectus. Maecenas molestie quam eget ipsum viverra placerat. Ut porta sollicitudin justo in pharetra. Donec laoreet imperdiet sapien. Aenean imperdiet iaculis ante non placerat. Aenean tristique accumsan placerat. Suspendisse potenti. Morbi tellus justo, mattis sit amet augue quis, suscipit pretium enim.`,
             date: new Date(new Date().setDate(1)).toISOString(),
+            id: 0,
         }, {
             name: "Holiday",
             description: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent elementum mauris risus, non tincidunt enim semper sit amet. Donec fermentum et leo et mattis. Nunc feugiat dolor finibus massa facilisis bibendum. Donec pellentesque vulputate elit et auctor. Vivamus maximus tellus et magna molestie tristique. Donec sed augue sodales, elementum elit sit amet, feugiat lectus. Maecenas molestie quam eget ipsum viverra placerat. Ut porta sollicitudin justo in pharetra. Donec laoreet imperdiet sapien. Aenean imperdiet iaculis ante non placerat. Aenean tristique accumsan placerat. Suspendisse potenti. Morbi tellus justo, mattis sit amet augue quis, suscipit pretium enim.`,
             date: new Date().toISOString(),
+            id: 1,
         }]
     }
 }
