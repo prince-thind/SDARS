@@ -1,4 +1,4 @@
-import { fetchFakeLoginResponse } from "./fakeAPI";
+import { fetchFakeCirculars, fetchFakeLoginResponse } from "./fakeAPI";
 
 export async function login({ username, password, setUsername, navigate, setPrivilege }) {
     const response = await fetchFakeLoginResponse({ username, password });
@@ -8,7 +8,7 @@ export async function login({ username, password, setUsername, navigate, setPriv
         navigate("/login")
         return
     }
-    
+
     setUsername(username);
     const { privilege } = response;
     setPrivilege(privilege);
@@ -22,4 +22,8 @@ export async function login({ username, password, setUsername, navigate, setPriv
         default: navigate("/login")
     }
 
+}
+
+export async function fetchCirculars() {
+    return (await fetchFakeCirculars()).data;
 }
