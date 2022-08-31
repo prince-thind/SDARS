@@ -1,6 +1,6 @@
 import { fetchFakeLoginResponse } from "./fakeAPI";
 
-export async function login({ username, password, setUsername, navigate }) {
+export async function login({ username, password, setUsername, navigate, setPrivilege }) {
     const response = await fetchFakeLoginResponse({ username, password });
 
     if (!response.exists) {
@@ -11,6 +11,7 @@ export async function login({ username, password, setUsername, navigate }) {
     
     setUsername(username);
     const { privilege } = response;
+    setPrivilege(privilege);
     switch (privilege) {
         case "student": navigate("/students");
             break;

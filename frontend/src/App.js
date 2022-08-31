@@ -7,14 +7,15 @@ import { useState } from 'react';
 
 function App() {
   const [username, setUsername] = useState(null);
+  const [privilege, setPrivilege] = useState(null);
 
   return (
     <HashRouter>
       <Routes>
-        <Route path="/" element={<Login username={username} setUsername={setUsername} />} />
-        <Route path="/students" element={<Students username={username} />} />
-        <Route path="/parents" element={<Parents username={username} />} />
-        <Route path="/teachers" element={<Teachers username={username} />} />
+        <Route path="/" element={<Login username={username} setUsername={setUsername} setPrivilege={setPrivilege} />} />
+        <Route path="/students" element={<Students username={username} privilege={privilege} />} />
+        <Route path="/parents" element={<Parents username={username} privilege={privilege} />} />
+        <Route path="/teachers" element={<Teachers username={username} privilege={privilege}/>} />
       </Routes>
     </HashRouter>
   );

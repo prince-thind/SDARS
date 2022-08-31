@@ -3,7 +3,7 @@ import { login } from "../../lib/API";
 import { useNavigate } from "react-router-dom";
 
 
-export default function Login({ username, setUsername }) {
+export default function Login({ username, setUsername, setPrivilege }) {
     const [fieldUsername, setFieldUsername] = useState(null)
     const [fieldPassword, setfieldPassword] = useState(null)
 
@@ -29,6 +29,6 @@ export default function Login({ username, setUsername }) {
 
     function submitForm(e) {
         e.preventDefault();
-        login({ username: fieldUsername, password: fieldPassword, setUsername, navigate })
+        login({ username: fieldUsername, password: fieldPassword, setUsername, navigate, setPrivilege })
     }
 }

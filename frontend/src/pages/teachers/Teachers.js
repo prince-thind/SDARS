@@ -1,5 +1,5 @@
-export default function Teachers({ username }) {
-    if (!username) return <div>unauthorized access</div>
+export default function Teachers({ username, privilege }) {
+    if (!username || !privilege) return <div>unauthorized access</div>
 
     return <div>Teachers</div>
 }
