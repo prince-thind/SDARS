@@ -64,6 +64,23 @@ export async function fetchFakeAssignments() {
     }
 }
 
+export async function fetchFakeProgress(username) {
+    await sleep(1);
+    return {
+        data: [
+            { name: 'subject1', grade: 'A', description: "lorem lorem blha blha", id: 0 },
+            { name: 'subject2', grade: 'A+', description: "lorem lorem blha blha2", id: 1 },
+        ]
+    }
+} export async function fetchFakeAttendence(username) {
+    await sleep(1);
+    return {
+        data: [
+            { name: username, remarks: "lorem lorem blha blha", attendence: 95 },
+        ]
+    }
+}
+
 function sleep(n) {
     return new Promise(r => setTimeout(r, n * 1000))
 }

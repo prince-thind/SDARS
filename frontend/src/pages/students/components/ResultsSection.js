@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react"
 import { fetchResults } from "../../../lib/API";
 
-export default function ResultsSection() {
+export default function ResultsSection({ username }) {
     const [results, setResults] = useState([]);
 
     useEffect(() => {
-        fetchResults().then(tests => {
+        fetchResults(username).then(tests => {
             setResults(tests)
         })
-    }, [])
+    }, [username])
 
 
     return <section>
@@ -24,7 +24,7 @@ export default function ResultsSection() {
 
 function Test({ test }) {
     return <div>
-        <h3> {test.name} ({test.type})</h3> 
+        <h3> {test.name} ({test.type})</h3>
         <div>
             <span> {test.marksGot}</span>
             <span>/</span>
