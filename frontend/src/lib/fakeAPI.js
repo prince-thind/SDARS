@@ -43,6 +43,17 @@ export async function fetchFakeCirculars() {
     }
 }
 
+
+export async function fetchFakeResults(username) {
+    await sleep(1);
+    return {
+        data: [
+            { name: 'test1', maxMarks: 100, marksGot: 75, type: 'classTest', id:0 },
+            { name: 'test2', maxMarks: 100, marksGot: 85, type: 'unit test', id:1 },
+        ]
+    }
+}
+
 function sleep(n) {
     return new Promise(r => setTimeout(r, n * 1000))
 }
