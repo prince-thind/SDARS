@@ -48,8 +48,18 @@ export async function fetchFakeResults(username) {
     await sleep(1);
     return {
         data: [
-            { name: 'test1', maxMarks: 100, marksGot: 75, type: 'classTest', id:0 },
-            { name: 'test2', maxMarks: 100, marksGot: 85, type: 'unit test', id:1 },
+            { name: 'test1', maxMarks: 100, marksGot: 75, type: 'classTest', id: 0 },
+            { name: 'test2', maxMarks: 100, marksGot: 85, type: 'unit test', id: 1 },
+        ]
+    }
+}
+
+export async function fetchFakeAssignments() {
+    await sleep(1);
+    return {
+        data: [
+            { name: 'assignment1', maxMarks: 100, description: "lorem lorem blha blha", dueDate: new Date().toISOString(), id: 0 },
+            { name: 'assignment2', maxMarks: 100, description: "lorem lorem blha blha2", dueDate: new Date().toISOString(), id: 1 },
         ]
     }
 }
