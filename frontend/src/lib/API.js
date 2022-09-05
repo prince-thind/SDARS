@@ -1,4 +1,4 @@
-import { fetchFakeAssignments, fetchFakeAttendence, fetchFakeCirculars, fetchFakeLoginResponse, fetchFakeProgress, fetchFakeResults } from "./fakeAPI";
+import { fetchFakeAssignments, fetchFakeAttendence, fetchFakeCirculars, fetchFakeFees, fetchFakeLoginResponse, fetchFakeProgress, fetchFakeResults } from "./fakeAPI";
 
 export async function login({ username, password, setUsername, navigate, setPrivilege }) {
     const response = await fetchFakeLoginResponse({ username, password });
@@ -42,4 +42,16 @@ export async function fetchProgress(username) {
 
 export async function fetchAttedence(username) {
     return (await fetchFakeAttendence(username)).data;
+}
+
+export async function fetchParentsProgress(username) {
+    return (await fetchFakeProgress(username)).data;
+}
+
+export async function fetchParentsAttendence(username) {
+    return (await fetchFakeAttendence(username)).data;
+}
+
+export async function fetchFees(parentName) {
+    return (await fetchFakeFees(parentName)).data;
 }

@@ -72,11 +72,22 @@ export async function fetchFakeProgress(username) {
             { name: 'subject2', grade: 'A+', description: "lorem lorem blha blha2", id: 1 },
         ]
     }
-} export async function fetchFakeAttendence(username) {
+}
+export async function fetchFakeAttendence(username) {
     await sleep(1);
     return {
         data: [
             { name: username, remarks: "lorem lorem blha blha", attendence: 95 },
+        ]
+    }
+}
+
+export async function fetchFakeFees(parentName) {
+    await sleep(1);
+    return {
+        data: [
+            { name: 'trip charges', cost: 450, description: "lorem lorem blha blha", id: 0 },
+            { name: 'tution fees', cost: 1500, description: "lorem lorem blha blha2", id: 1 },
         ]
     }
 }
