@@ -64,6 +64,7 @@ export async function fetchFakeAssignments() {
     }
 }
 
+
 export async function fetchFakeProgress(username) {
     await sleep(1);
     return {
