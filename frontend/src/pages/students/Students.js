@@ -15,8 +15,5 @@ export default function Students({ username, privilege }) {
         <AssignmentsSection />
         <ProgressSection username={username} />
         <Attendence username={username} />
-
     </section>
-
-
 }

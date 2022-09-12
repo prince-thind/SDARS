@@ -11,8 +11,8 @@ export default function ResultsSection() {
     }, [])
 
 
-    return <section>
-        <h2>Assignments</h2>
+    return <section className="module">
+        <h3>Assignments</h3>
         {assignments.length === 0 ? "loading" : ""}
         <ul>
             {assignments.map(e => {
@@ -23,12 +23,12 @@ export default function ResultsSection() {
 }
 
 function Assignment({ assignment }) {
-    return <div>
-        <h3> {assignment.name} ({assignment.marks} marks)</h3>
+    return <div className="module-item assignments-module-item">
+        <h4> {assignment.name} - ({assignment.maxMarks} marks)</h4>
         <p>
             {assignment.description}
         </p>
-        <div>Date of SUbmission{assignment.dueDate}</div>
+        <h5>Submission by: {new Date(assignment.dueDate).toLocaleDateString()}</h5>
         <a target="_blank" rel="noreferrer" href={`/students/assignments/${assignment.id}`}> Download now</a>
 
     </div>

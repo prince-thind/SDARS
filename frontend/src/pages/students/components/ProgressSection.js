@@ -11,8 +11,8 @@ export default function ProgressSection({ username }) {
     }, [username])
 
 
-    return <section>
-        <h2>Progress Report</h2>
+    return <section className="module">
+        <h3>Progress Report</h3>
         {progress.length === 0 ? "loading" : ""}
         <ul>
             {progress.map(e => {
@@ -23,8 +23,8 @@ export default function ProgressSection({ username }) {
 }
 
 function ProgressCard({ progress }) {
-    return <div>
-        <h3>Name:  {progress.name}</h3>
+    return <div className="module-item">
+        <h4>Name:  {progress.name}</h4>
         <h4>Grade: {progress.grade}</h4>
         <p>{progress.description}</p>
     </div>

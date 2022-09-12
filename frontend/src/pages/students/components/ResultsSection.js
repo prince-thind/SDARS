@@ -11,8 +11,8 @@ export default function ResultsSection({ username }) {
     }, [username])
 
 
-    return <section>
-        <h2>Results</h2>
+    return <section className="module result-module">
+        <h3>Results</h3>
         {results.length === 0 ? "loading" : ""}
         <ul>
             {results.map(e => {
@@ -23,11 +23,11 @@ export default function ResultsSection({ username }) {
 }
 
 function Test({ test }) {
-    return <div>
-        <h3> {test.name} ({test.type})</h3>
-        <div>
+    return <div className="module-item">
+        <h4> {test.name} ({test.type})</h4>
+        <div className="marks">
             <span> {test.marksGot}</span>
-            <span>/</span>
-            <span> {test.maxMarks}</span></div>
+            <span> / </span>
+            <span>{test.maxMarks}</span></div>
     </div>
 }

@@ -46,11 +46,12 @@ body {
 .module {
   max-width: 90%;
   margin: 1rem auto;
-  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  /* padding-bottom: 0.5rem; */
   box-shadow: 2px 2px 5px 3px gray;
 }
-.module ul{
-  list-style:none ;
+.module ul {
+  list-style: none;
 }
 
 .module h3 {
@@ -59,16 +60,19 @@ body {
   padding: 0.5rem;
   margin-bottom: 0.5rem;
 }
-.module-item{
-  margin-bottom: 2rem;
-}
-.module-item h4{
+.module-item {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid gray;
   text-align: left;
+}
+.module-item h4 {
   padding: 0.5rem 2rem;
 }
-.module-item p{
+.module-item p {
   text-align: justify;
   padding: 0 1rem;
+  padding-left: 4rem;
+
 }
 
 /* --------------page specific styles--------------------- */
@@ -112,3 +116,27 @@ body {
 }
 
 /* student page styles */
+
+.marks {
+  text-align: left;
+  padding-left: 6rem;
+  font-size: 3rem;
+}
+.result-module h4 {
+  font-size: 2rem;
+}
+
+
+.assignments-module-item h5 {
+  padding: 0.5rem;
+  padding-left: 4rem;
+  font-size: 1rem;
+}
+
+.assignments-module-item a {
+  display: block;
+  max-width: fit-content;
+  padding:1rem;
+  margin:auto;
+  background-color: hsl(240, 50%, 75%);
+}
