@@ -10,9 +10,9 @@ export default function CircularsSection() {
         })
     }, [])
 
-    
-    return <section>
-        <h2>Circulars</h2>
+
+    return <section className="module">
+        <h3>Circulars</h3>
         {circulars.length === 0 ? "loading" : ""}
         <ul>
             {circulars.map(e => {
@@ -23,9 +23,14 @@ export default function CircularsSection() {
 }
 
 function Circular({ circular }) {
-    return <div>
-        <h3> {circular.name}</h3>
+    return <div className="module-item">
+        <h4> {circular.name} - ({formatDate(circular.date)})</h4>
         <p> {circular.description}</p>
-        <h3> {circular.date}</h3>
     </div>
+}
+
+function formatDate(date){
+    const newDate=new Date(date);
+    const formattedDate=newDate.toLocaleDateString();
+    return formattedDate
 }

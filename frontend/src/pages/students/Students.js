@@ -8,15 +8,15 @@ import ProgressSection from "./components/ProgressSection";
 export default function Students({ username, privilege }) {
     if (!username || !privilege) return <UnauthorizedAccess />
 
-    return <div>
-        <h2>Studnets's page </h2>
+    return <section className="student-section section">
+        <h2>Student's Corner </h2>
         <CircularsSection />
         <ResultsSection username={username} />
         <AssignmentsSection />
         <ProgressSection username={username} />
         <Attendence username={username} />
 
-    </div>
+    </section>
 
 
 }

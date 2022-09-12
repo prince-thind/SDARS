@@ -20,7 +20,7 @@ export default function UnauthorizedAccess({ circular }) {
         }
     }, [time, navigate])
 
-    return <div>
-        unauthorized access! returing back to login in {time / 1000} seconds
+    return <div className="unauthorized-access">
+        Unauthorized access! returing back to login in {time / 1000} seconds
     </div>
 }

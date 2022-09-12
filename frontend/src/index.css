@@ -8,6 +8,7 @@
 
 body {
   text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* layout styles */
@@ -29,7 +30,48 @@ body {
   padding: 0.5rem;
 }
 
-/* page specific styles */
+.unauthorized-access {
+  color: red;
+  padding: 2rem;
+  font-size: 1.5rem;
+}
+
+.section h2 {
+  text-align: left;
+  padding: 1rem;
+  background: linear-gradient(to right, hsl(39, 50%, 90%), white);
+  border-bottom: 1px solid hsl(0, 0%, 80%);
+}
+
+.module {
+  max-width: 90%;
+  margin: 1rem auto;
+  padding-bottom: 0.5rem;
+  box-shadow: 2px 2px 5px 3px gray;
+}
+.module ul{
+  list-style:none ;
+}
+
+.module h3 {
+  background: hsl(240, 50%, 90%);
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.module-item{
+  margin-bottom: 2rem;
+}
+.module-item h4{
+  text-align: left;
+  padding: 0.5rem 2rem;
+}
+.module-item p{
+  text-align: justify;
+  padding: 0 1rem;
+}
+
+/* --------------page specific styles--------------------- */
 
 /* login page styles */
 
@@ -53,18 +95,20 @@ body {
   margin-left: 1rem;
 }
 
-.login-form button{
-    max-width: fit-content;
-    margin: 1rem auto;
-    padding:0.5rem 1rem;
-    font-size: inherit;
+.login-form button {
+  max-width: fit-content;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  font-size: inherit;
 }
-.login-form button:hover{
-    cursor: pointer;
+.login-form button:hover {
+  cursor: pointer;
 }
 
-.login-form .login-error{
+.login-form .login-error {
   font-size: 1.2rem;
-  color:red;
+  color: red;
   text-align: center;
 }
+
+/* student page styles */
