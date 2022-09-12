@@ -1,7 +1,7 @@
 export default function Header(){
-   return <header>
+   return <header className="header">
         <h1>
-            student management system
+            Student Management System
         </h1>
     </header>
 }

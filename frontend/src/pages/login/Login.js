@@ -7,12 +7,16 @@ export default function Login({ username, setUsername, setPrivilege }) {
     const [fieldUsername, setFieldUsername] = useState(null)
     const [fieldPassword, setfieldPassword] = useState(null)
 
-    let navigate = useNavigate();
+    const navigate = useNavigate();
 
 
-    return (<form onSubmit={submitForm}>
-        <input type="text" name="username" onChange={updateUsername} />
-        <input type="password" name="password" onChange={updatePassword} />
+    return (<form className="login-form form" onSubmit={submitForm}>
+        <label> Enter Username
+            <input type="text" name="username" required onChange={updateUsername} />
+        </label>
+        <label> Enter Password
+            <input type="password" name="password" required onChange={updatePassword} />
+        </label>
         <button> Login</button>
     </form>)
 
