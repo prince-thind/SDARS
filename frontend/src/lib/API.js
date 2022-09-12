@@ -6,7 +6,7 @@ export async function login({ username, password, setUsername, navigate, setPriv
     if (!response.exists) {
         setUsername(null);
         navigate("/login")
-        return
+        return {error: "Username or Password incorrect"}
     }
 
     setUsername(username);
@@ -22,6 +22,7 @@ export async function login({ username, password, setUsername, navigate, setPriv
         default: navigate("/login")
     }
 
+    return null;
 }
 
 export async function fetchCirculars() {

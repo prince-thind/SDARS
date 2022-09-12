@@ -1,11 +1,13 @@
 import { useState } from "react"
 import { login } from "../../lib/API";
 import { useNavigate } from "react-router-dom";
+import Error from "../../lib/commonComponents/ErrorToast";
 
 
 export default function Login({ username, setUsername, setPrivilege }) {
     const [fieldUsername, setFieldUsername] = useState(null)
     const [fieldPassword, setfieldPassword] = useState(null)
+    const [error,setError]=useState(null)
 
     const navigate = useNavigate();
 
@@ -18,6 +20,7 @@ export default function Login({ username, setUsername, setPrivilege }) {
             <input type="password" name="password" required onChange={updatePassword} />
         </label>
         <button> Login</button>
+        {error && <Error error={error} />}
     </form>)
 
 
@@ -31,8 +34,11 @@ export default function Login({ username, setUsername, setPrivilege }) {
         setfieldPassword(value)
     }
 
-    function submitForm(e) {
+   async function submitForm(e) {
         e.preventDefault();
-        login({ username: fieldUsername, password: fieldPassword, setUsername, navigate, setPrivilege })
+        const {error}= await login({ username: fieldUsername, password: fieldPassword, setUsername, navigate, setPrivilege })
+        if(error){
+            setError(error)
+        }
     }
 }
