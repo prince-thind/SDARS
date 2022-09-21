@@ -1,4 +1,4 @@
-import { fetchFakeAssignments, fetchFakeAttendence, fetchFakeCirculars, fetchFakeFees, fetchFakeLoginResponse, fetchFakeProgress, fetchFakeResults, submitFakeAttedence, submitFakeProgress } from "./fakeAPI";
+import { fetchFakeAssignments, fetchFakeAttendence, fetchFakeCirculars, fetchFakeFees, fetchFakeLoginResponse, fetchFakeProgress, fetchFakeResults, submitFakeAssignment, submitFakeAttedence, submitFakeProgress } from "./fakeAPI";
 
 export async function login({ username, password, setUsername, navigate, setPrivilege }) {
     const response = await fetchFakeLoginResponse({ username, password });
@@ -64,3 +64,8 @@ export async function submitProgress(data) {
 export async function submitAttedence(data) {
     return (await submitFakeAttedence(data)).status;
 }
+
+export async function submitAssignment(data) {
+    return (await submitFakeAssignment(data)).status;
+}
+

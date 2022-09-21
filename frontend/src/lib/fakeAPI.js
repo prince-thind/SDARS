@@ -115,6 +115,17 @@ export async function submitFakeAttedence(data) {
 }
 
 
+export async function submitFakeAssignment(data) {
+    if (data.file === 'error') {
+        return {
+            status: false,
+        }
+    }
+    return { status: true }
+
+}
+
+
 function sleep(n) {
     return new Promise(r => setTimeout(r, n * 1000))
 }
