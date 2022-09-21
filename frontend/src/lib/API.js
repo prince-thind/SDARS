@@ -69,3 +69,8 @@ export async function submitAssignment(data) {
     return (await submitFakeAssignment(data)).status;
 }
 
+
+export async function submitResult(data) {
+    return (await submitFakeAssignment(data)).status;
+}
+

@@ -104,6 +104,18 @@ export async function submitFakeProgress(data) {
 
 }
 
+
+export async function submitFakeResult(data) {
+    if (data.username === 'error') {
+        return {
+            status: false,
+        }
+    }
+    return { status: true }
+
+}
+
+
 export async function submitFakeAttedence(data) {
     if (data.username === 'error') {
         return {
