@@ -24,6 +24,18 @@ body {
 
 /* common component styles */
 
+.error {
+  font-size: 1.2rem;
+  color: red;
+  text-align: center;
+}
+
+.success {
+  font-size: 1.2rem;
+  color: green;
+  text-align: center;
+}
+
 .header {
   background-color: hsl(240, 50%, 50%);
   color: white;
@@ -47,7 +59,6 @@ body {
   max-width: 90%;
   margin: 1rem auto;
   margin-bottom: 2rem;
-  /* padding-bottom: 0.5rem; */
   box-shadow: 2px 2px 5px 3px gray;
 }
 .module ul {
@@ -74,6 +85,33 @@ body {
   padding-left: 4rem;
 
 }
+
+.form label{
+  display: flex;
+  padding:1rem;
+  /* border-bottom:1px solid gray; */
+  justify-content: space-between;
+  align-items: center;
+}
+.form input{
+  padding:0.5rem;
+  margin-left: 1rem;
+}
+.form button{
+  max-width: fit-content;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  font-size: inherit;
+}
+.form button:hover{
+  cursor: pointer;
+}
+
+.container{
+  width: fit-content;
+  margin:auto;
+}
+
 
 /* --------------page specific styles--------------------- */
 
@@ -109,11 +147,7 @@ body {
   cursor: pointer;
 }
 
-.login-form .login-error {
-  font-size: 1.2rem;
-  color: red;
-  text-align: center;
-}
+
 
 /* student page styles */
 
@@ -140,3 +174,4 @@ body {
   margin:auto;
   background-color: hsl(240, 50%, 75%);
 }
+

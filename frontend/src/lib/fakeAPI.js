@@ -93,6 +93,19 @@ export async function fetchFakeFees(parentName) {
     }
 }
 
+
+export async function submitFakeProgress(data) {
+    if (data.username === 'error') {
+        return {
+            status: false,
+        }
+    }
+    
+    return { status: true }
+
+}
 function sleep(n) {
     return new Promise(r => setTimeout(r, n * 1000))
 }
+
+
