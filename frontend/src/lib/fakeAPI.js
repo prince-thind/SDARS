@@ -58,8 +58,8 @@ export async function fetchFakeAssignments() {
     await sleep(1);
     return {
         data: [
-            { name: 'assignment1', maxMarks: 100, description: "lorem lorem blha blha", dueDate: new Date().toISOString(), id: 0 },
-            { name: 'assignment2', maxMarks: 100, description: "lorem lorem blha blha2", dueDate: new Date().toISOString(), id: 1 },
+            { name: 'assignment1', maxMarks: 100, description: "lorem lorem blha blha", dueDate: new Date().toISOString(), id: 0, text: 'lorem lorem blha blha' },
+            { name: 'assignment2', maxMarks: 100, description: "lorem lorem blha blha2", dueDate: new Date().toISOString(), id: 1, text: 'lorem lorem blha blha2' },
         ]
     }
 }

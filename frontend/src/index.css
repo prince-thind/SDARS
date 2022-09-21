@@ -11,6 +11,10 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 /* layout styles */
 
 .layout {
@@ -83,35 +87,30 @@ body {
   text-align: justify;
   padding: 0 1rem;
   padding-left: 4rem;
-
 }
 
-.form label{
+.form label {
   display: flex;
-  padding:1rem;
+  padding: 1rem;
   /* border-bottom:1px solid gray; */
   justify-content: space-between;
   align-items: center;
 }
-.form input{
-  padding:0.5rem;
+.form input {
+  padding: 0.5rem;
   margin-left: 1rem;
 }
-.form button{
+.form button {
   max-width: fit-content;
   margin: 1rem auto;
   padding: 0.5rem 1rem;
   font-size: inherit;
 }
-.form button:hover{
-  cursor: pointer;
-}
 
-.container{
+.container {
   width: fit-content;
-  margin:auto;
+  margin: auto;
 }
-
 
 /* --------------page specific styles--------------------- */
 
@@ -143,11 +142,6 @@ body {
   padding: 0.5rem 1rem;
   font-size: inherit;
 }
-.login-form button:hover {
-  cursor: pointer;
-}
-
-
 
 /* student page styles */
 
@@ -159,19 +153,22 @@ body {
 .result-module h4 {
   font-size: 2rem;
 }
-
-
+.assignments-module-item{
+  display: flex;
+  justify-content: space-between;
+}
 .assignments-module-item h5 {
   padding: 0.5rem;
   padding-left: 4rem;
   font-size: 1rem;
 }
 
-.assignments-module-item a {
+.assignments-module-item button {
   display: block;
+  color: white;
+  font-size: 1rem;
   max-width: fit-content;
-  padding:1rem;
-  margin:auto;
+  padding: 1rem;
+  margin: auto;
   background-color: hsl(240, 50%, 75%);
 }
-
