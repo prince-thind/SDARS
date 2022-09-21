@@ -12,3 +12,4 @@ root.render(
 
 //todo
 //set up file download for assignments
+//logout

@@ -9,10 +9,8 @@ export default function Attendence({ username }) {
             setAttendence(attendence)
         })
     }, [username])
-
-
-    return <section>
-        <h2>Attendence</h2>
+    return <section className="module">
+        <h3>Attendence</h3>
         {attendence.length === 0 ? "loading" : ""}
         <ul>
             {attendence.map(e => {
@@ -23,8 +21,8 @@ export default function Attendence({ username }) {
 }
 
 function AttendenceCard({ attendence }) {
-    return <div>
-        <h3>Total Attendence:  {attendence.attendence}</h3>
+    return <div className="module-item">
+        <h4>Total Attendence:  {attendence.attendence}</h4>
         <p> {attendence.remarks} </p>
     </div>
 }

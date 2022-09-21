@@ -11,8 +11,8 @@ export default function FeeSection({ username }) {
     }, [username])
 
 
-    return <section>
-        <h2>Progress Report</h2>
+    return <section className="module">
+        <h3>Fees</h3>
         {fees.length === 0 ? "loading" : ""}
         <ul>
             {fees.map(e => {
@@ -23,8 +23,8 @@ export default function FeeSection({ username }) {
 }
 
 function FeeCard({ feeElement }) {
-    return <div>
-        <h3>Name:  {feeElement.name}</h3>
+    return <div className="module-item">
+        <h4>Name:  {feeElement.name}</h4>
         <h4>Cost: {feeElement.cost}</h4>
         <p>{feeElement.description}</p>
     </div>
