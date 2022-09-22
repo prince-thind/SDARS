@@ -1,16 +1,16 @@
 import mysql.connector as connector
 
-db = connector.connect(host="127.0.0.1", user="root", password="password", database="school")  # change "password" here
+db = connector.connect(host="127.0.0.1", user="root", password="291005", database="school")
 cursor = db.cursor(buffered=True)
 
 #=======================================================================================================================
 
-class login():
-    global cursor
+class check_password:
+    global cursor                                                             # using same cursor as defined in the file
 
     def __init__(self,username:str,password:str,person:str):
-        self.username=username
-        self.password=password
+        self.username=username                       # this function just defines the parameters given as self variables
+        self.password=password              # these self variables are accessible by all the functions inside this class
         self.person=person
 
     def student_login(self):
@@ -18,7 +18,7 @@ class login():
         if temp_data == "?":
             raise KeyError
         command = "select * from class{} where admno='{}'".format(temp_data,self.username)
-        self.cursor.execute(command)
+        self.cursor.execute(command)                  # extracts the data that has been provided by execution of command
         data = (self.cursor.fetchone()[-1])
         if data == self.password:
             self.resp = True
@@ -26,10 +26,12 @@ class login():
             self.resp = False
 
 
-    def teacher_login(self):                          # edit here in patch-2
+    def teacher_login(self):
         command="select * from faculty where id='{}'".format(self.username)
-        self.cursor.execute(command)
-        data = (self.cursor.fetchone()[2])    # what if there is no data found?
+        self.cursor.execute(command)                  # extracts the data that has been provided by execution of command
+        data = self.cursor.fetchone()
+        if type(data)==None:
+            raise KeyError
         if data == self.password:
             self.resp = True
         else:
@@ -37,10 +39,8 @@ class login():
 
     def parent_login(self):
         temp_data=find_class(self.username)
-        if temp_data == "?":
-            raise KeyError
         command = "select * from class{} where admno='{}'".format(temp_data, self.username)
-        self.cursor.execute(command)
+        self.cursor.execute(command)                  # extracts the data that has been provided by execution of command
         data = (self.cursor.fetchone()[-1])
         if data == self.password:
             self.resp = True
@@ -50,6 +50,7 @@ class login():
 
     def data(self):
         persons={"student": self.student_login, "teacher":self.teacher_login, "parent":self.parent_login}
+        # defining dictionary of functions that are simply callable as a reference to them is added
 
         try:
             persons[self.person]()
@@ -64,16 +65,15 @@ class login():
 #=======================================================================================================================
 
 def find_class(username:str):
-    global cursor
+    global cursor                                                             # using same cursor as defined in the file
     cursor.execute("show tables;")
     tables = cursor.fetchall().remove(("faculty",))
     response = "?"
     for i in tables:
         cursor.execute("select * from {} where admno='{}'".format(i[0],username))
-        r_val=cursor.fetchall()
+        r_val=cursor.fetchall()                       # extracts the data that has been provided by execution of command
         if len(r_val)==1:
-            response = i[0][-4:]                        # specific for our use
+            response = i[0][-2:]                                                # change index value as per need in here
             break
         else:continue
     return response
-
