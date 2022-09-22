@@ -3,14 +3,16 @@ import CircularsSection from "../../lib/commonComponents/CircularsSection";
 import ProgressSection from "./components/ProgressSection";
 import AttedenceSection from "./components/AttedenceSection";
 import AssignmentsSection from "./components/AssignmentsSection";
+import ResultsSection from "./components/ResultsSection";
 
 export default function Teachers({ username, privilege }) {
     if (!username || !privilege) return <UnauthorizedAccess />
 
     return <div>
         <CircularsSection />
-        <ProgressSection username={username} />
-        <AttedenceSection username={username} />
-        <AssignmentsSection username={username} />
+        <AttedenceSection />
+        <AssignmentsSection />
+        <ProgressSection />
+        <ResultsSection />
     </div>
 }

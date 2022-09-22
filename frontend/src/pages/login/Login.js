@@ -12,7 +12,7 @@ export default function Login({ username, setUsername, setPrivilege }) {
     const navigate = useNavigate();
 
 
-    return (<form className="login-form form" onSubmit={submitForm}>
+    return (<form className="login-form" onSubmit={submitForm}>
         <label> Enter Username
             <input type="text" name="username" required onChange={updateUsername} />
         </label>

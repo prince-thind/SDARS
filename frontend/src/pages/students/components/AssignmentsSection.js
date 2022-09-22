@@ -24,12 +24,30 @@ export default function ResultsSection() {
 
 function Assignment({ assignment }) {
     return <div className="module-item assignments-module-item">
-        <h4> {assignment.name} - ({assignment.maxMarks} marks)</h4>
-        <p>
-            {assignment.description}
-        </p>
-        <h5>Submission by: {new Date(assignment.dueDate).toLocaleDateString()}</h5>
-        <a target="_blank" rel="noreferrer" href={`/students/assignments/${assignment.id}`}> Download now</a>
+        <div>
+            <h4> {assignment.name} - ({assignment.maxMarks} marks)</h4>
+            <p>
+                {assignment.description}
+            </p>
+            <h5>Submission by: {new Date(assignment.dueDate).toLocaleDateString()}</h5>
+        </div>
+        <button onClick={download}> Download now</button>
 
     </div>
+
+    function download() {
+        const filename = 'assignment' + assignment.id + '.txt';
+        const text=assignment.text;
+
+        const element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        element.setAttribute('download', filename);
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
+    }
 }
