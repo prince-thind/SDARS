@@ -12,7 +12,7 @@ export default function Students({ username, privilege, userClass }) {
         <h2>Student's Corner ({username}:{userClass})</h2>
         <CircularsSection />
         <ResultsSection username={username} />
-        <AssignmentsSection />
+        <AssignmentsSection userClass={userClass}/>
         <ProgressSection username={username} />
         <Attendence username={username} />
     </section>

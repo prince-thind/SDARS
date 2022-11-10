@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react"
 import { fetchAssignments } from "../../../lib/API";
 
-export default function ResultsSection() {
+export default function AssignmentsSection({userClass}) {
     const [assignments, setAssignments] = useState([]);
 
     useEffect(() => {
-        fetchAssignments().then(tests => {
+        fetchAssignments(userClass).then(tests => {
             setAssignments(tests)
         })
-    }, [])
+    }, [userClass])
 
 
     return <section className="module">

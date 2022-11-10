@@ -35,8 +35,8 @@ export async function fetchResults(username) {
     return (await fetchFakeResults(username)).data;
 }
 
-export async function fetchAssignments(username) {
-    return (await fetchFakeAssignments(username)).data;
+export async function fetchAssignments(userClass) {
+    return (await fetchFakeAssignments(userClass)).data;
 }
 
 export async function fetchProgress(username) {
