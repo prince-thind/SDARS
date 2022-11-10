@@ -36,9 +36,6 @@ async function fakeFetch(route, postData) {
         case '/teachers/progress/': return submitFakeProgress({})
 
         case '/teachers/attendence/': return submitFakeAttedence({})
-        case '/parents/attendence/{username}': return null;
-
-        case '/parents/fees/{username}': return null;
         default: return fetchMethods();
     }
 
