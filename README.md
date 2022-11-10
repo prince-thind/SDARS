@@ -32,6 +32,7 @@ if you follow these correctly it should open a browser window with the project
 + apis specs are defined in the misc folder
 + assume all fields return strings, unless a type is specified in the conventional way in the api.
 + /login does not need to send an id field as usernames gotten from login screen act as unique identifier
++ origin for fetch request can be set inside frontend/src/config (for eg, localhost:8000).
 
 ## backend
 

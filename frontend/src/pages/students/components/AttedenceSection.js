@@ -15,9 +15,7 @@ export default function Attendence({ username }) {
         <h3>Attendence</h3>
         {attendence.length === 0 ? "loading" : ""}
         <ul>
-            {attendence.map(e => {
-                return <li key={e.id}><AttendenceCard attendence={e} /></li>
-            })}
+            <li ><AttendenceCard attendence={attendence[0]} /></li>
         </ul>
     </section>
 }

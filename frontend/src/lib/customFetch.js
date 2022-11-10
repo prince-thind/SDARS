@@ -6,7 +6,19 @@ const origin = config.origin;
 export default async function customFetch(route, config) {
     if (!origin) return await fakeFetch(route, config);
 
-    //todo implement real fetch requests
+    if (config.method === 'GET') {
+        return await fetch(origin + route);
+    }
+    else {
+        return await fetch(origin, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(config.body)
+        })
+    }
 }
 
 async function fakeFetch(route, postData) {
