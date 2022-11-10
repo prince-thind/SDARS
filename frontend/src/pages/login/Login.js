@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Error from "../../lib/commonComponents/ErrorToast";
 
 
-export default function Login({ username, setUsername, setPrivilege }) {
+export default function Login({ username, setUsername, setPrivilege, setUserClass }) {
     const [fieldUsername, setFieldUsername] = useState(null)
     const [fieldPassword, setfieldPassword] = useState(null)
     const [error,setError]=useState(null)
@@ -36,7 +36,7 @@ export default function Login({ username, setUsername, setPrivilege }) {
 
    async function submitForm(e) {
         e.preventDefault();
-        const {error}= await login({ username: fieldUsername, password: fieldPassword, setUsername, navigate, setPrivilege })
+        const {error}= await login({ username: fieldUsername, password: fieldPassword, setUsername, navigate, setPrivilege, setUserClass })
         if(error){
             setError(error)
         }

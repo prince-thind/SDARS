@@ -9,7 +9,7 @@ export async function fetchFakeLoginResponse({ username, password }) {
     const dbPassword3 = "123p"
 
     if (dbUserName1 === username && dbPassword1 === password) {
-        return { exists: true, privilege: "student" };
+        return { exists: true, privilege: "student", userClass:'7th-B' };
     }
 
     if (dbUserName2 === username && dbPassword2 === password) {

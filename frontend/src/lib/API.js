@@ -1,6 +1,6 @@
 import { fetchFakeAssignments, fetchFakeAttendence, fetchFakeCirculars, fetchFakeFees, fetchFakeLoginResponse, fetchFakeProgress, fetchFakeResults, submitFakeAssignment, submitFakeAttedence, submitFakeProgress } from "./fakeAPI";
 
-export async function login({ username, password, setUsername, navigate, setPrivilege }) {
+export async function login({ username, password, setUsername, navigate, setPrivilege, setUserClass }) {
     const response = await fetchFakeLoginResponse({ username, password });
 
     if (!response.exists) {
@@ -10,8 +10,10 @@ export async function login({ username, password, setUsername, navigate, setPriv
     }
 
     setUsername(username);
-    const { privilege } = response;
+    const { privilege, userClass } = response;
     setPrivilege(privilege);
+    setUserClass(userClass);
+
     switch (privilege) {
         case "student": navigate("/students");
             break;
@@ -22,7 +24,7 @@ export async function login({ username, password, setUsername, navigate, setPriv
         default: navigate("/login")
     }
 
-    return null;
+    return {error: null};
 }
 
 export async function fetchCirculars() {

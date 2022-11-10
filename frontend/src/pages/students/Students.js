@@ -5,11 +5,11 @@ import UnauthorizedAccess from "../../lib/commonComponents/UnauthorisedAccess";
 import Attendence from "./components/AttedenceSection";
 import ProgressSection from "./components/ProgressSection";
 
-export default function Students({ username, privilege }) {
+export default function Students({ username, privilege, userClass }) {
     if (!username || !privilege) return <UnauthorizedAccess />
 
     return <section className="student-section section">
-        <h2>Student's Corner </h2>
+        <h2>Student's Corner ({username}:{userClass})</h2>
         <CircularsSection />
         <ResultsSection username={username} />
         <AssignmentsSection />
