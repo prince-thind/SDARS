@@ -9,6 +9,7 @@ export default function AssignmentSection() {
     return <form className="form module" onSubmit={handleSubmit}>
         <h3>Upload Assignment</h3>
         <div className="container">
+            <label>Enter Class Name: <input type="text" required name="class"></input> </label>
             <label>Upload File: <input type="file" name="file"></input> </label>
         </div>
         <button>Submit</button>
@@ -22,8 +23,9 @@ export default function AssignmentSection() {
         setError(null)
         const form = e.target;
         const file = form.file.files[0];
-        const text = (await (file.text()))
-        const values = { text, file }
+        const text = (await (file.text()));
+        const userClass=form.class.value;
+        const values = { text, file, userClass }
 
         const status = await submitAssignment(values);
         if (status) {
