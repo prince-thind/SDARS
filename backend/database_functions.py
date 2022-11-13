@@ -67,7 +67,8 @@ class check_password:
 def find_class(username: str):
     global cursor  # using same cursor as defined in the file
     cursor.execute("show tables;")
-    tables = cursor.fetchall()[0:2]
+    tables = cursor.fetchall()
+    tables=tables[0:len(tables)-1]
     response = "?"
     for i in tables:
         cursor.execute("select * from {} where admno='{}'".format(i[0], username))
